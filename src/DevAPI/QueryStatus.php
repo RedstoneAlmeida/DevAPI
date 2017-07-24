@@ -27,36 +27,30 @@ class QueryStatus {
         if($ip == null){
             $ip = "pe.lbsg.net:19132";
         }
-        $this->type = "mcpe";
-        $this->webtype = self::getURL($website . $ip . "/" . $type);
+        $this->webtype = self::getURL($website . $ip . "/" . "mcpe");
     }
     
     public function getSoftware(){
-        if($this->type != "mcpe") return;
         $software = json_decode($this->webtype, true);
         return $software["software"];
     }
     
     public function getVersion(){
-        if($this->type != "mcpe") return;
         $version = json_decode($this->webtype, true);
         return $version["version"];
     }
 
     public function getOnlinePlayers(){
-        if($this->type != "mcpe") return;
         $players = json_decode($this->webtype, true);
         return $players["players"]["online"];
     }
     
     public function getMaxPlayers(){
-        if($this->type != "mcpe") return;
         $players = json_decode($this->webtype, true);
         return $players["players"]["max"];
     }
     
     public function getServerInformation(){
-        if($this->type != "mcpe") return;
         return "{$this->getSoftware()} - {$this->getVersion()} | Online: {$this->getOnlinePlayers()} - Max: {$this->getMaxPlayers()}";
     }
 
