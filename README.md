@@ -22,3 +22,11 @@ use DevAPI\event\callEvent;
 $callEvent = new callEvent();
 $callEvent->callEvent($ev = new MyCustomEvent($args));
 ```
+## LoaderAPI
+```
+use DevAPI\LoaderAPI;
+
+class MyClassName extends LoaderAPI{
+      public function onEnable(){ echo 'hi'; }
+}
+```
