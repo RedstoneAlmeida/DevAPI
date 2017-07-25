@@ -23,7 +23,7 @@ $callEvent = new callEvent();
 $callEvent->callEvent($ev = new MyCustomEvent($args));
 ```
 ## LoaderAPI
-```
+```php
 use DevAPI\LoaderAPI;
 
 class MyClassName extends LoaderAPI{
